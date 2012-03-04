@@ -1,15 +1,64 @@
 @(title: String)(content: Html)
 
-<!DOCTYPE html>
+@selected(toCheck:String) = {
+  @if(title.toLowerCase == toCheck.toLowerCase) {
+    @Html("selected")
+  } else {
+    @Html("")
+  }
+}
 
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-    </head>
-    <body>
-        @content
-    </body>
+<head>
+    <title>Stepping Stones - Sober Living in Ventura County, CA :: @title</title>
+    <meta name="description" content="Stepping Stones is a recovery based, twelve step, transitional living for men in Ventura County. We’re dedicated to helping men 
+        achieve a foundation in sobriety; to gaining the necessary skills to live a successful life." />
+
+    <meta property="og:title" name="og:title" content="Stepping Stones - Sober Living in Ventura County, CA" />
+    <meta property="og:type" name="og:type" content="website" />
+    <meta property="og:url" name="og:url" content="http://www.stepping-stones-sober-living.com/" />
+    <meta property="og:image" name="og:image" content="http://www.stepping-stones-sober-living.com/content/images/logo.png" />
+
+    <link href="@routes.Assets.at("stylesheets/Site.css")" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/prettyPhoto.css")" type="text/css" media="screen" charset="utf-8" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <a href="@routes.Application.index"><img src="@routes.Assets.at("images/logo.png")" alt="Stepping Stones: Sober Living" /></a>
+        <nav>
+            <ul>
+                <li class="@selected("about")"><a href="@routes.Application.index"><span>About</span></a></li>
+                <li class="@selected("photos")"><a href="@routes.Application.photos"><span>Photos</span></a></li>
+                <li class="@selected("rules")"><a href="@routes.Application.rules"><span>Rules</span></a></li>
+                <li class="@selected("location")"><a href="@routes.Application.location"><span>Location</span></a></li>
+            </ul>   
+        </nav>
+    </header>
+
+    @content
+    
+    <footer itemscope itemtype="http://schema.org/Place">
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">4700 Reeder Ave.</span>
+            <span itemprop="addressLocality">Oxnard</span>,
+            <span itemprop="addressRegion">CA</span>
+            <span itemprop="postalCode">93030</span>
+            <strong>tel</strong>: <span itemprop="telephone">(805) 223-9174</span>
+        </span>
+    </footer>
+
+    <a href="_Layout.cshtml">_Layout.cshtml</a>
+    <script src="@routes.Assets.at("javascripts/jquery-1.6.2.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.prettyPhoto.js")" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $("a[rel^='prettyPhoto']").prettyPhoto({ "social_tools": "" });
+    </script>
+</body>
 </html>

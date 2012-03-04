@@ -1,0 +1,117 @@
+html, body{ margin: 0px; padding:0px}
+body{ background:#efebe0; color:#512b0b; font-size:10pt; font-family:Verdana, helvetica, Sans-Serif; }
+article{ width: 920px; margin:0 auto; padding:20px 20px; }
+footer { text-align:center; clear: left; width:920px; margin: 0px auto; padding: 15px 0px; border-top:2px solid #512b0b;}
+a{ text-decoration:underline; color:#efebe0;}
+a:hover{ text-decoration:none; color:#000; }
+img{ border: none; }
+body > header
+{ 
+	padding:20px;
+	width: 920px; 
+	margin: 0 auto; 
+	background: #ddd192; 
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-left: solid 1px #000;
+	border-right: solid 1px #000;
+	border-bottom: solid 1px #000;
+	position: relative;
+}
+html.boxshadow body > header
+{
+	border:none;
+	-moz-box-shadow: 0px 3px 5px #ccc;
+	-webkit-box-shadow: 0px 3px 5px #ccc;
+	box-shadow: 0px 3px 5px #ccc;
+}
+
+body > header > nav
+{
+	border-top: 3px solid #efebe0;
+	height: 20px;
+	width: 545px;
+	position: absolute;
+	right:0px;
+	top: 90px;
+}
+
+body > header > nav ul
+{
+	float:right;
+	margin:0px;
+	padding:0px;
+	list-style-type: none;
+}
+body > header > nav ul li
+{
+	float: left;
+	padding: 10px;
+	font-size:14pt;
+}
+body > header > nav ul li a
+{
+	color:#efebe0;
+	text-decoration: none;
+}
+body > header > nav ul li.selected a
+{
+	color: #000;
+}
+article aside img{ padding:0px; margin:0px;}
+article aside
+{
+	width:300px;
+	height: 425px;
+	float:left;
+	border: 3px solid #ddd192;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	-webkit-border-radius:	3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+article header h1
+{
+	text-align:right;
+	border-bottom: 3px solid #512b0b;
+}
+
+article section ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type:none;
+}
+
+article section ul li
+{
+	background: #ddd192;
+	float: left;
+	padding: 2px;
+	margin: 10px;
+	width: 150px;
+	-webkit-border-radius:	3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align:center;
+}
+html.boxshadow article section ul li
+{
+	border-color: #ddd192;
+	-moz-box-shadow: 0px 3px 5px #ccc;
+	-webkit-box-shadow: 0px 3px 5px #ccc;
+	box-shadow: 0px 3px 5px #ccc;
+	
+}
+
+/* Setup HTML 5 Tags */
+article, nav, header, footer, section
+{
+	display: block;
+}
