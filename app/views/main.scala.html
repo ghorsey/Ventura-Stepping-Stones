@@ -1,11 +1,4 @@
 @(title: String)(content: Html)
-@selected(toCheck:String) = {
-  @if(title.toLowerCase == toCheck.toLowerCase) {
-    @Html("selected")
-  } else {
-    @Html("")
-  }
-}
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -60,3 +53,10 @@
     </script>
 </body>
 </html>
+@selected(toCheck:String) = {
+  @if(title.toLowerCase == toCheck.toLowerCase) {
+    @Html("selected")
+  } else {
+    @Html("")
+  }
+}
