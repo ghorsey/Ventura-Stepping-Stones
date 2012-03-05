@@ -6,18 +6,18 @@ import play.api.mvc._
 object Application extends Controller {
   
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+    Ok(views.html.index())
   }
 
   def photos = Action { 
-    Ok("Photos")
+    Ok(views.html.photos())
   }
 
   def rules = Action {
-    Ok("Rules")
+    Ok(views.html.rules())
   }
 
   def location = Action {
-    Ok("location")
+    Ok(views.html.location())
   }
 }
