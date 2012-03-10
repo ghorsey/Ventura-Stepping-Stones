@@ -5,3 +5,6 @@ target
 tmp
 .history
 .ensime
+.classpath
+.project
+.settings/
